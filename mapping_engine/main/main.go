@@ -24,6 +24,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"fmt"
 
 	"github.com/GoogleCloudPlatform/healthcare-data-harmonization/mapping_engine/transform" /* copybara-comment: transform */
 	"google.golang.org/protobuf/encoding/prototext" /* copybara-comment: prototext */
@@ -201,7 +202,7 @@ func main() {
 
 		op := outputFileName(*outputDir, f)
 		if *outputDir == "" {
-			log.Printf(string(bres))
+			fmt.Println(string(bres))
 		} else {
 			if err := ioutil.WriteFile(op, bres, fileWritePerm); err != nil {
 				log.Fatalf("Could not write output file %q: %v", op, err)

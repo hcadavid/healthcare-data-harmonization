@@ -201,7 +201,7 @@ func main() {
 
 		op := outputFileName(*outputDir, f)
 		if *outputDir == "" {
-			log.Printf("File %q\n\n%s\n", op, string(bres))
+			log.Printf(bres)
 		} else {
 			if err := ioutil.WriteFile(op, bres, fileWritePerm); err != nil {
 				log.Fatalf("Could not write output file %q: %v", op, err)
